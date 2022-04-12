@@ -76,6 +76,16 @@ const Card = ({ propsMovie }) => {
     return genreArray.map((genre) => <li key={genre}>{genre}</li>);
   };
 
+  const addStorage = () => {
+    let storedData = window.localStorage.movie ? window.localStorage.movie.split(",") : [];
+    if (!storedData.includes(propsMovie.id.toString())) {
+      storedData.push(propsMovie.id);
+      window.localStorage.movie = storedData;
+    } else {
+      alert("Film déjà ajouté");
+    }
+  };
+
   return (
     <div className="card">
       <img
@@ -104,7 +114,7 @@ const Card = ({ propsMovie }) => {
       {propsMovie.overview ? <h3>Synopsis</h3> : ""}
       <p>{propsMovie.overview}</p>
       
-      <div className="btn"></div>
+      <div className="btn" onClick={() => addStorage()}>Ajouter aux coups de ❤️ </div>
     </div>
   );
 };
