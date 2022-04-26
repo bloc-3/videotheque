@@ -86,6 +86,13 @@ const Card = ({ propsMovie }) => {
     }
   };
 
+  const deleteStorage = () => {
+    let storedData = window.localStorage.movie.split(",");
+    let newData = storedData.filter((id) => id !== propsMovie.id.toString());
+    window.localStorage.movie = newData;
+    window.location.reload();
+  }
+    
   return (
     <div className="card">
       <img
@@ -113,8 +120,15 @@ const Card = ({ propsMovie }) => {
       </ul>
       {propsMovie.overview ? <h3>Synopsis</h3> : ""}
       <p>{propsMovie.overview}</p>
-      
-      <div className="btn" onClick={() => addStorage()}>Ajouter aux coups de ❤️ </div>
+      {propsMovie.genre_ids ? (
+        <div className="btn" onClick={() => addStorage()}>
+          Ajouter aux coups de ❤️
+        </div>
+      ) : (
+        <div className="btn" onClick={() => deleteStorage()}>
+          Supprimer de la liste
+        </div>
+      )}
     </div>
   );
 };
