@@ -16,6 +16,13 @@ $color-3: rgb(100, 100, 100);
 $black: #060d2c;
 $white: rgb(238, 238, 238);
 
+$black1: rgb(28, 28, 28);
+$black2: rgb(49, 49, 49);
+$black3: rgb(70, 70, 70);
+$white: rgb(207, 207, 207);
+$grey: rgb(95, 95, 95);
+$shadow: 0 3px 20px rgba(0, 0, 0, 0.356);
+
 * {
   margin: 0;
   padding: 0;
@@ -34,4 +41,37 @@ li {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+
+@import url("https://fonts.googleapis.com/css2?family=Fredoka&display=swap");
+
+@mixin verticalCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button,
+input[type="submit"] {
+  background: none;
+  border: none;
+  cursor: pointer;
+  // background: $color1;
+  transition: 0.2s;
+
+  &:hover {
+    filter: brightness(80%);
+    transform: translateX(2px);
+  }
+}
+
+input,
+textarea {
+  border-radius: 7px;
+  border: none;
+  resize: none;
+  margin: 5px;
+  padding: 8px;
+  background: $white;
 }
