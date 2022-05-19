@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import Header from '../components/Header';
+
 import axios from 'axios';
+
+import Header from '../components/Header';
 import Card from '../components/Card';
 
 const UserList = () => {

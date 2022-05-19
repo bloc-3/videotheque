@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+
 import { auth } from "../environnement/firebaseConf";
 
 
@@ -20,6 +21,7 @@ const SignUp = () => {
           displayName
         })
         console.log(userAuth);
+        window.location.reload();
       });
     } catch (error) {
       console.log(error.message);
@@ -46,7 +48,7 @@ const SignUp = () => {
             required
             ref={registerPassword}
           />
-          <input type="password" placeholder="Confirmer mot de passe" />
+          {/* <input type="password" placeholder="Confirmer mot de passe" /> */}
           <input type="submit" value="Valider inscription" />
         </form>
       </div>

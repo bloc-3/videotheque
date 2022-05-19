@@ -78,6 +78,7 @@ const Card = ({ propsMovie }) => {
 
   const addStorage = () => {
     let storedData = window.localStorage.movie ? window.localStorage.movie.split(",") : [];
+
     if (!storedData.includes(propsMovie.id.toString())) {
       storedData.push(propsMovie.id);
       window.localStorage.movie = storedData;
@@ -89,6 +90,7 @@ const Card = ({ propsMovie }) => {
   const deleteStorage = () => {
     let storedData = window.localStorage.movie.split(",");
     let newData = storedData.filter((id) => id !== propsMovie.id.toString());
+
     window.localStorage.movie = newData;
     window.location.reload();
   }

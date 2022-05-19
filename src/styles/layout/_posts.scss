@@ -1,3 +1,19 @@
+$font-1: "font-1", sans-serif;
+$font-2: "font-2", sans-serif;
+
+$color1: #546fe4;
+$color-2: #212040;
+$color-3: rgb(100, 100, 100);
+$black: #060d2c;
+$white: rgb(238, 238, 238);
+
+$black1: rgb(28, 28, 28);
+$black2: rgb(49, 49, 49);
+$black3: rgb(70, 70, 70);
+$white: rgb(207, 207, 207);
+$grey: rgb(95, 95, 95);
+$shadow: 0 3px 20px rgba(0, 0, 0, 0.356);
+
 .posts-container {
   max-width: 900px;
   margin: 0 auto;
@@ -20,7 +36,7 @@
         font-size: 2rem;
       }
       span {
-        // background: $color1;
+        background: $color1;
         border-radius: 150px;
         font-size: 1.2rem;
         margin: 0px 10px 0 0;
@@ -47,7 +63,7 @@
         height: 20px;
         width: 14px;
         font-size: 0.85rem;
-        // color: $color1;
+        color: $color1;
         cursor: pointer;
         transition: 0.2s;
 
