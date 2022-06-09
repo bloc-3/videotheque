@@ -8,6 +8,7 @@ const Header = () => {
                 <ul>
                     <NavLink to="/" className={(nav)=>(nav.isActive ? "nav-active" : "")}><li>Accueil</li></NavLink>
                     <NavLink to="/coup-de-coeur" className={(nav)=>(nav.isActive ? "nav-active" : "")}><li>Coup de Coeurs</li></NavLink>
+                    <NavLink to="/connexion" className={(nav)=>(nav.isActive ? "nav-active" : "")}><li>Connexion</li></NavLink>
                 </ul>
             </nav>
             <h1>React Movies</h1>
