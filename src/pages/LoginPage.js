@@ -1,24 +1,24 @@
 import React, { useEffect, useState } from "react";
 import ConnectModal from "../components/ConnectModal";
 import { onAuthStateChanged, signOut } from "firebase/auth";
-import { auth, db } from "../environnement/firebaseConf";
+import { auth } from "../utils/firebase.config";
 import CreatePost from "../components/CreatePost";
-import { collection, getDocs } from "firebase/firestore";
 import Post from "../components/Post";
+import { useDispatch, useSelector } from "react-redux";
+import { getPosts } from "../actions/post.action";
 import { NavLink } from "react-router-dom";
 
 const App = () => {
   const [user, setUser] = useState(null);
-  const [posts, setPosts] = useState([]);
+  const posts = useSelector((state) => state.postReducer);
+  const dispatch = useDispatch();
 
   onAuthStateChanged(auth, (currentUser) => {
     setUser(currentUser);
   });
 
   useEffect(() => {
-    getDocs(collection(db, "posts")).then((res) =>
-      setPosts(res.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
-    );
+    dispatch(getPosts());
   }, []);
 
   const handleLogout = async () => {
@@ -35,14 +35,12 @@ const App = () => {
             <button onClick={() => handleLogout()}>
               <i className="fa-solid fa-arrow-right-from-bracket"></i>
             </button>
-            <nav className="fa-solid fa-arrow-right-from-bracket">
-              <NavLink
-                to="/"
-                className={(nav) => (nav.isActive ? "nav-active" : "")}
-              >
-                <p>home</p>
-              </NavLink>
-            </nav>
+            <NavLink
+              to="/"
+              className={(nav) => (nav.isActive ? "nav-active" : "")}
+            >
+              <li>Accueil</li>
+            </NavLink>
           </div>
         )}
 
