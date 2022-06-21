@@ -1,12 +1,12 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 
-const Acceuil = () => {
+const Accueil = () => {
   return (
     <div>
       <Navbar />
     </div>
   );
 };
-export default Acceuil;
+export default Accueil;
  
