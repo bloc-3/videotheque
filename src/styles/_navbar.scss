@@ -1,0 +1,73 @@
+@import "./variables";
+
+$black: #000;
+$white: #fff;
+
+// .globalNAV {
+//     background-color: $color1;
+//     color: #ffffff;
+//     display: flex;
+// }
+
+// .navButton {
+//     background-color: red;
+//     flex-wrap: nowrap;
+//     margin: 20px;
+// }
+
+.globalNAV {
+  background-color: $color1;
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+
+  h1 {
+    font-size: 2.5rem;
+    text-shadow: 2px 3px 0px $color2;
+    text-align: left;
+    letter-spacing: 2px;
+    margin-left: 0.5rem;
+    color: $white;
+  }
+  img {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    margin-top: 0.5rem;
+    width: 5rem;
+    height: 5rem;
+
+  }
+  nav {
+    margin-left: auto;
+    align-self: center;
+
+    ul {
+      display: flex;
+
+      a {
+        text-decoration: none;
+        color: $white;
+        border-radius: 10px;
+        width: 102px;
+        text-align: center;
+        margin-right: 5px;
+        background-color: $color2;
+
+        &:visited {
+          text-decoration: none;
+          color: $white;
+        }
+        &:hover {
+          background: $black;
+        }
+      }
+        a.nav-active {
+          background: $color1;
+
+          &:hover {
+            background: $black;
+          }
+        }
+    }
+  }
+}
