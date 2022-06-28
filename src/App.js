@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Accueil from "./pages/Accueil";
 // import UserList from "./pages/UserList";
-// import LoginPage from "./pages/LoginPage";
+import Connexion from "./pages/Connexion";
 
 //redux
 
@@ -12,8 +12,8 @@ const App = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Accueil />} />
-        {/* <Route path="/coup-de-coeur" element={<UserList />} />
-        <Route path="/connexion" element={<LoginPage />} /> */}
+        {/* <Route path="/coup-de-coeur" element={<UserList />} /> */}
+        <Route path="/connexion" element={<Connexion />} />
       </Routes>
     </BrowserRouter>
   );
