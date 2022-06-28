@@ -3,6 +3,7 @@ import { useState } from 'react';
 import SignIn from './SignInForm/SignIn';
 import SignUp from './SignInForm/SignUp';
 
+// contenu de la page de connexion sans la navbar
 const SignInForm = () => {
   const [signIn, setSignIn] = useState(true);
 
