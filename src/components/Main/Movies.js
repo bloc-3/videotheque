@@ -1,14 +1,14 @@
 import React from "react";
 import MovieCard from "../MovieCard";
 
-const Movies = ({ sortOrder, movies }) => {
+const Movies = ({ sortingOrder, movies }) => {
 
   return (
     <div>
       {movies
-        .slice(0, 12)
+        //.slice(0, 12)
         .sort((a, b) => {
-          switch (sortOrder) {
+          switch (sortingOrder) {
             case "descending":
               return b.vote_average - a.vote_average;
             case "ascending":

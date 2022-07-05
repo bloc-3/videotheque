@@ -7,72 +7,73 @@ const MovieCard = ({ movie }) => {
   };
 
   const genreFinder = () => {
-    let genreArray = [];
-    //propsMovie.genre_ids.forEach(element => switch(element) {...});
-    for (let i = 0; i < movie.genre_ids.length; i++) {
-      switch (movie.genre_ids[i]) {
+    const genres = [];
+
+    movie.genre_ids.forEach((element) => {
+      switch (element) {
         case 28:
-          genreArray.push(`Action`);
+          genres.push(`Action`);
           break;
         case 12:
-          genreArray.push(`Aventure`);
+          genres.push(`Aventure`);
           break;
         case 16:
-          genreArray.push(`Animation`);
+          genres.push(`Animation`);
           break;
         case 35:
-          genreArray.push(`Comédie`);
+          genres.push(`Comédie`);
           break;
         case 80:
-          genreArray.push(`Policier`);
+          genres.push(`Policier`);
           break;
         case 99:
-          genreArray.push(`Documentaire`);
+          genres.push(`Documentaire`);
           break;
         case 18:
-          genreArray.push(`Drame`);
+          genres.push(`Drame`);
           break;
         case 10751:
-          genreArray.push(`Famille`);
+          genres.push(`Famille`);
           break;
         case 14:
-          genreArray.push(`Fantasy`);
+          genres.push(`Fantasy`);
           break;
         case 36:
-          genreArray.push(`Histoire`);
+          genres.push(`Histoire`);
           break;
         case 27:
-          genreArray.push(`Horreur`);
+          genres.push(`Horreur`);
           break;
         case 10402:
-          genreArray.push(`Musique`);
+          genres.push(`Musique`);
           break;
         case 9648:
-          genreArray.push(`Mystère`);
+          genres.push(`Mystère`);
           break;
         case 10749:
-          genreArray.push(`Romance`);
+          genres.push(`Romance`);
           break;
         case 878:
-          genreArray.push(`Science-fiction`);
+          genres.push(`Science-fiction`);
           break;
         case 10770:
-          genreArray.push(`Téléfilm`);
+          genres.push(`Téléfilm`);
           break;
         case 53:
-          genreArray.push(`Thriller`);
+          genres.push(`Thriller`);
           break;
         case 10752:
-          genreArray.push(`Guerre`);
+          genres.push(`Guerre`);
           break;
         case 37:
-          genreArray.push(`Western`);
+          genres.push(`Western`);
           break;
         default:
           break;
       }
-    }
-    return genreArray.map((genre) => <li key={genre}>{genre}</li>);
+    });
+
+    return genres.map((genre) => <li key={genre}>{genre}</li>);
   };
 
   const addStorage = () => {
@@ -96,15 +97,21 @@ const MovieCard = ({ movie }) => {
     window.location.reload();
   };
 
+  const addToFavorites = () => {
+    console.log("ajouté");
+  };
+  
+  const removeFromFavorites = () => {};
+
   return (
     <div>
       <img
         src={
           movie.poster_path
             ? "https://image.tmdb.org/t/p/w500" + movie.poster_path
-            : "./img/poster.jpg"
+            : "./images/Poster.jpg"
         }
-        alt="Affiche du film"
+        alt={`Affiche du film ${movie.title}`}
       />
       <h2>{movie.title}</h2>
       {movie.release_date ? (
@@ -123,15 +130,22 @@ const MovieCard = ({ movie }) => {
               <li key={index}>{genre.name}</li>
             ))}
       </ul>
-      {movie.overview ? <h3>Synopsis</h3> : ""}
-      <p>{movie.overview}</p>
+      {movie.overview ? (
+        <div>
+          <h3>Synopsis</h3>
+          <p>{movie.overview}</p>
+        </div>
+      ) : (
+        ""
+      )}
+
       {movie.genre_ids ? (
-        <div className="btn" onClick={() => addStorage()}>
+        <div className="btn" onClick={() => addToFavorites()}>
           Ajouter aux favoris
         </div>
       ) : (
-        <div className="btn" onClick={() => deleteStorage()}>
-          Supprimer de la liste
+        <div className="btn" onClick={() => removeFromFavorites()}>
+          Retirer des favoris
         </div>
       )}
     </div>
