@@ -12,7 +12,11 @@ const MovieSearchBar = ({ setMovies, setSortingOrder }) => {
   return (
     <div className="movie-search-bar">
       <div className="movie-search-text-input">
-        <form onSubmit={(e) => {e.preventDefault();}}>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+          }}
+        >
           <input
             type="text"
             placeholder="NOM DE FILM"

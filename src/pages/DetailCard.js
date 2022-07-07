@@ -1,61 +1,56 @@
 import React from "react";
 import Navbar from "../components/Navbar";
+import Comments from "../components/Comments/Comments";
 
-const DetailCard = () => {
+const DetailCard = ({ movie }) => {
+  const dateFormater = (date) => {
+    const [year, month, day] = date.split("-");
+    return [day, month, year].join("/");
+  };
+
   return (
     <div>
       <Navbar />
       <div className="detail_page">
         <div className="detail_part_left">
-          <h1 className="title">Titre du film</h1>
+          <h1 className="title">{movie.title}</h1>
           <div className="film_poster">
             <img
               className="resp"
-              src="https://www.ecranlarge.com/uploads/image/001/121/8nx8sttha1zidt73sbnncvfswqk-989.jpg"
-              alt="Affiche du film"
+              src={
+                movie.poster_path
+                  ? "https://image.tmdb.org/t/p/w500" + movie.poster_path
+                  : "./images/Poster.jpg"
+              }
+              alt={`Affiche du film ${movie.title}`}
             />
           </div>
+          {movie.release_date ? (
+            <h5>Sorti le : {dateFormater(movie.release_date)}</h5>
+          ) : (
+            ""
+          )}
           <div className="buttons">
             <button>Science-fiction</button>
             <button>Divertissement</button>
           </div>
-          <p className="stars">⭐️⭐️⭐️⭐️⭐️</p>
+          <p className="stars">
+            {movie.vote_average}/10 <span>⭐</span>
+          </p>
           <p className="heart">❤️</p>
         </div>
         <div className="detail_part_right">
-          <div>
-            <p className="movie_detail">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Provident, voluptas soluta maiores quod dolore magnam labore vitae
-              omnis dolores reiciendis sunt ut amet vero. Eius, voluptatibus!
-              Suscipit officiis eligendi recusandae.Lorem ipsum dolor sit amet
-              consectetur adipisicing elit. Provident, voluptas soluta maiores
-              quod dolore magnam labore vitae omnis dolores reiciendis sunt ut
-              amet vero. Eius, voluptatibus! Suscipit officiis eligendi
-              recusandae.Lorem ipsum dolor sit amet consectetur adipisicing
-              elit. Provident, voluptas soluta maiores quod dolore magnam labore
-              vitae omnis dolores reiciendis sunt ut amet vero. Eius,
-              voluptatibus! Suscipit officiis eligendi recusandae.Lorem ipsum
-              dolor sit amet consectetur adipisicing elit. Provident, voluptas
-              soluta maiores quod dolore magnam labore vitae omnis dolores
-              reiciendis sunt ut amet vero. Eius, voluptatibus! Suscipit
-              officiis eligendi recusandae.
-            </p>
+          <div className="movie_detail">
+              {movie.overview ? (
+                <div>
+                  <h3>Synopsis</h3>
+                  <p>{movie.overview}</p>
+                </div>
+              ) : (
+                ""
+              )}
           </div>
-          <input className="comment_zone" type="text" />
-          <button className="valid_button">Poster</button>
-          <p className="old_comment">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Repudiandae minima quo illo? In consequatur obcaecati laudantium,
-            veritatis sapiente praesentium aperiam facere quibusdam. Inventore
-            aperiam doloribus modi, nobis quasi labore laudantium.
-          </p>
-          <p className="old_comment">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Repudiandae minima quo illo? In consequatur obcaecati laudantium,
-            veritatis sapiente praesentium aperiam facere quibusdam. Inventore
-            aperiam doloribus modi, nobis quasi labore laudantium.
-          </p>
+          <Comments />
         </div>
       </div>
     </div>

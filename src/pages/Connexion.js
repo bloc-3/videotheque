@@ -1,12 +1,12 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
-import SignInForm from '../components/SignInForm';
+import SignForm from '../components/SignForm/SignForm';
 
-const Connexion = () => {
+const Connexion = ({ auth, setUserCredentials }) => {
   return (
     <div>
       <Navbar />
-      <SignInForm />
+      <SignForm auth={ auth } setUserCredentials={ setUserCredentials } />
     </div>
   );
 };

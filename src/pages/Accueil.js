@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "../components/Navbar";
-import Main from "../components/Main";
+import Main from "../components/Main/Main";
 
 const Accueil = () => {
   return (

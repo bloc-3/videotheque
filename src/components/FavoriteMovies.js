@@ -2,9 +2,11 @@ import React from 'react';
 
 // contenu de la page d'accueil sans la navbar
 const FavoriteMovies = () => {
+  const isAuthenticated = true;
+
   return (
     <div>
-      Favorite Movies
+      {isAuthenticated ? 'yes' : <p>Vous ne pouvez pas accéder à cette section car vous n'êtes pas authentifié.</p>}
     </div>
   );
 };

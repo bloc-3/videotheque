@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const MovieCard = ({ movie }) => {
   const dateFormater = (date) => {
@@ -100,11 +101,12 @@ const MovieCard = ({ movie }) => {
   const addToFavorites = () => {
     console.log("ajouté");
   };
-  
+
   const removeFromFavorites = () => {};
 
   return (
     <div>
+      <NavLink to={"/detailsfilm"}>Détails du film</NavLink>
       <img
         src={
           movie.poster_path
