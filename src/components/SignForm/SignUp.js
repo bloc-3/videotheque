@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 
-const SignUp = ({ auth, setUserCredentials }) => {
+import { context } from "../../context";
+
+const SignUp = () => {
+  const { auth, setUserCredentials } = useContext(context);
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const email = e.target.email;
-    const password = e.target.password;
+    const email = e.target.email.value;
+    const password = e.target.password.value;
 
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredentials) => {
@@ -17,9 +21,14 @@ const SignUp = ({ auth, setUserCredentials }) => {
 
   return (
     <form className="sign" onSubmit={handleSubmit}>
-      <input type="text" placeholder="PSEUDO" required />
-      <input type="email" placeholder="EMAIL" required />
-      <input type="password" placeholder="MOT DE PASSE" required />
+      <input type="text" name="pseudo" placeholder="PSEUDO" required />
+      <input type="email" name="email" placeholder="EMAIL" required />
+      <input
+        type="password"
+        name="password"
+        placeholder="MOT DE PASSE"
+        required
+      />
       <input type="submit" value="VALIDER" />
     </form>
   );

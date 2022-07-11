@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 
+import { context } from "../context";
+
 function Navbar() {
+  const { auth, userCredentials, setUserCredentials } = useContext(context);
   const TITLE = "CINE CLUB";
 
   return (
@@ -26,14 +29,29 @@ function Navbar() {
           >
             Favoris
           </NavLink>
-          <NavLink
-            className={(nav) =>
-              nav.isActive ? "navButtonActive" : "navButton"
-            }
-            to="/connexion"
-          >
-            Connexion
-          </NavLink>
+          {userCredentials != null ? (
+            <NavLink
+              className={(nav) =>
+                nav.isActive ? "navButtonActive" : "navButton"
+              }
+              to="/"
+              onClick={() => {
+                auth.signOut();
+                setUserCredentials(null);
+              }}
+            >
+              Déconnexion
+            </NavLink>
+          ) : (
+            <NavLink
+              className={(nav) =>
+                nav.isActive ? "navButtonActive" : "navButton"
+              }
+              to="/connexion"
+            >
+              Connexion
+            </NavLink>
+          )}
         </ul>
       </nav>
     </div>

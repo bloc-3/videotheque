@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { context } from "./context";
 
 import Accueil from "./pages/Accueil";
 import Connexion from "./pages/Connexion";
 import Favoris from "./pages/Favoris";
-import DetailCard from "./pages/DetailCard";
+import DetailsFilm from "./pages/DetailsFilm";
 
 // FIREBASE
 // Import the functions you need from the SDKs you need
@@ -21,18 +22,18 @@ const firebaseConfig = {
   projectId: "videotheque-perso",
   storageBucket: "videotheque-perso.appspot.com",
   messagingSenderId: "591632957401",
-  appId: "1:591632957401:web:2e06475160459ae9f963c8"
+  appId: "1:591632957401:web:2e06475160459ae9f963c8",
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+initializeApp(firebaseConfig);
 
 const auth = getAuth();
 const db = getFirestore();
 
 //db.settings({ timestampsInSnapshots: true });
 
-//const collectionReference = collection(db, "nom_collection");
+//const collectionReference = collection(db, "favorite_movies");
 // FIREBASE
 
 const App = () => {
@@ -40,15 +41,17 @@ const App = () => {
   const [movieId, setMovieId] = useState({});
 
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="*" element={<Accueil />} />
-        <Route path="/" element={<Accueil />} />
-        <Route path="/connexion" element={<Connexion auth={ auth} setUserCredentials={ setUserCredentials } />} />
-        <Route path="/favoris" element={<Favoris />} />
-        <Route path={"detailsfilm"} element={<DetailCard movieId={ movieId } />} />
-      </Routes>
-    </BrowserRouter>
+    <context.Provider value={{auth, db, userCredentials, setUserCredentials, movieId, setMovieId}}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="*" element={<Accueil />} />
+          <Route path="/" element={<Accueil />} />
+          <Route path="/connexion" element={<Connexion />} />
+          <Route path="/favoris" element={<Favoris />} />
+          <Route path={"detailsfilm"} element={<DetailsFilm />} />
+        </Routes>
+      </BrowserRouter>
+    </context.Provider>
   );
 };
 

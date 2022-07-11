@@ -2,11 +2,6 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 const MovieCard = ({ movie }) => {
-  const dateFormater = (date) => {
-    const [year, month, day] = date.split("-");
-    return [day, month, year].join("/");
-  };
-
   const genreFinder = () => {
     const genres = [];
 
@@ -74,7 +69,13 @@ const MovieCard = ({ movie }) => {
       }
     });
 
-    return genres.map((genre) => <li key={genre}>{genre}</li>);
+    return (
+      <ul>
+        {genres.map((genre) => (
+          <li key={genre}>{genre}</li>
+        ))}
+      </ul>
+    );
   };
 
   const addStorage = () => {
@@ -90,14 +91,6 @@ const MovieCard = ({ movie }) => {
     }
   };
 
-  const deleteStorage = () => {
-    let storedData = window.localStorage.movie.split(",");
-    let newData = storedData.filter((id) => id !== movie.id.toString());
-
-    window.localStorage.movie = newData;
-    window.location.reload();
-  };
-
   const addToFavorites = () => {
     console.log("ajouté");
   };
@@ -106,41 +99,29 @@ const MovieCard = ({ movie }) => {
 
   return (
     <div>
-      <NavLink to={"/detailsfilm"}>Détails du film</NavLink>
-      <img
-        src={
-          movie.poster_path
-            ? "https://image.tmdb.org/t/p/w500" + movie.poster_path
-            : "./images/Poster.jpg"
-        }
-        alt={`Affiche du film ${movie.title}`}
-      />
-      <h2>{movie.title}</h2>
-      {movie.release_date ? (
-        <h5>Sorti le : {dateFormater(movie.release_date)}</h5>
-      ) : (
-        ""
-      )}
-      <h4>
-        {movie.vote_average}/10 <span>⭐</span>
-      </h4>
-
-      <ul>
-        {movie.genre_ids
-          ? genreFinder()
-          : movie.genres.map((genre, index) => (
+      <NavLink to={{ pathname: "/detailsfilm", movieId: movie.id }}>
+        <h2>{movie.title}</h2>
+        <img
+          src={
+            movie.poster_path
+              ? "https://image.tmdb.org/t/p/w500" + movie.poster_path
+              : "./images/Poster.jpg"
+          }
+          alt={`Affiche du film ${movie.title}`}
+        />
+        {movie.genre_ids ? (
+          genreFinder()
+        ) : (
+          <ul>
+            {movie.genres.map((genre, index) => (
               <li key={index}>{genre.name}</li>
             ))}
-      </ul>
-      {movie.overview ? (
-        <div>
-          <h3>Synopsis</h3>
-          <p>{movie.overview}</p>
-        </div>
-      ) : (
-        ""
-      )}
-
+          </ul>
+        )}
+        <h4>
+          {movie.vote_average}/10 <span>⭐</span>
+        </h4>
+      </NavLink>
       {movie.genre_ids ? (
         <div className="btn" onClick={() => addToFavorites()}>
           Ajouter aux favoris

@@ -2,12 +2,15 @@ import React, { useState } from "react";
 import axios from "axios";
 
 const MovieSearchBar = ({ setMovies, setSortingOrder }) => {
-  const [search, setSearch] = useState("test");
+  const [search, setSearch] = useState("disney");
   const [topButtonActive, setTopButtonActive] = useState(true);
 
   const axiosRequest = `https://api.themoviedb.org/3/search/movie?api_key=653b5baee25572caf2d0ff68ef6950b8&query=${search}&language=fr-FR`;
 
-  axios.get(axiosRequest).then((res) => setMovies(res.data.results));
+  axios
+    .get(axiosRequest)
+    .then((res) => setMovies(res.data.results))
+    .catch((error) => {console.log("Impossible d'effectuer la recherche de films avec ce critère.");});
 
   return (
     <div className="movie-search-bar">

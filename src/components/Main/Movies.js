@@ -6,7 +6,6 @@ const Movies = ({ sortingOrder, movies }) => {
   return (
     <div>
       {movies
-        //.slice(0, 12)
         .sort((a, b) => {
           switch (sortingOrder) {
             case "descending":
