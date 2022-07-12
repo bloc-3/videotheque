@@ -1,10 +1,12 @@
 import React, { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 
 import { context } from "../../context";
 
 const SignUp = () => {
-  const { auth, setUserCredentials } = useContext(context);
+  const navigate = useNavigate();
+  const { auth, setUserId } = useContext(context);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -14,9 +16,14 @@ const SignUp = () => {
 
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredentials) => {
-        setUserCredentials(userCredentials);
+        setUserId(userCredentials.user.uid);
+        console.log("connection ok ", email);
+        navigate("/");
       })
-      .catch((error) => {});
+      .catch((error) => {
+        console.log("connection erreur ", email);
+        navigate("/");
+      });
   };
 
   return (

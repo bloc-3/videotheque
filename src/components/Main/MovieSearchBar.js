@@ -2,15 +2,22 @@ import React, { useState } from "react";
 import axios from "axios";
 
 const MovieSearchBar = ({ setMovies, setSortingOrder }) => {
-  const [search, setSearch] = useState("disney");
+  const [search, setSearch] = useState("cars");
   const [topButtonActive, setTopButtonActive] = useState(true);
 
-  const axiosRequest = `https://api.themoviedb.org/3/search/movie?api_key=653b5baee25572caf2d0ff68ef6950b8&query=${search}&language=fr-FR`;
+  const tmdbApiRequest = `https://api.themoviedb.org/3/search/movie?api_key=653b5baee25572caf2d0ff68ef6950b8&query=${search}&language=fr-FR`;
 
   axios
-    .get(axiosRequest)
-    .then((res) => setMovies(res.data.results))
-    .catch((error) => {console.log("Impossible d'effectuer la recherche de films avec ce critère.");});
+    .get(tmdbApiRequest)
+    .then((res) => {
+      setMovies(res.data.results);
+      console.log(res.data.results);
+    })
+    .catch((error) => {
+      console.log(
+        "Impossible d'effectuer la recherche de films avec ce critère."
+      );
+    });
 
   return (
     <div className="movie-search-bar">
@@ -23,7 +30,9 @@ const MovieSearchBar = ({ setMovies, setSortingOrder }) => {
           <input
             type="text"
             placeholder="NOM DE FILM"
-            onChange={(e) => setSearch(e.target.value)}
+            onChange={(e) => {
+              setSearch(e.target.value);
+            }}
           />
         </form>
       </div>

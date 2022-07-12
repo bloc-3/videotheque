@@ -34,14 +34,15 @@ const db = getFirestore();
 //db.settings({ timestampsInSnapshots: true });
 
 //const collectionReference = collection(db, "favorite_movies");
+auth.onAuthStateChanged((user) => {});
 // FIREBASE
 
 const App = () => {
-  const [userCredentials, setUserCredentials] = useState({});
+  const [userId, setUserId] = useState('');
   const [movieId, setMovieId] = useState({});
 
   return (
-    <context.Provider value={{auth, db, userCredentials, setUserCredentials, movieId, setMovieId}}>
+    <context.Provider value={{auth, db, userId, setUserId, movieId, setMovieId}}>
       <BrowserRouter>
         <Routes>
           <Route path="*" element={<Accueil />} />

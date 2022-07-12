@@ -4,12 +4,12 @@ import Navbar from "../components/Navbar";
 import MovieDetails from "../components/MovieDetails";
 import Comments from "../components/Comments/Comments";
 
-const DetailsFilm = () => {
+const DetailsFilm = ({ movieId }) => {
 
   return (
     <div>
       <Navbar />
-      <MovieDetails />
+      <MovieDetails movieId={ movieId } />
       <Comments />
     </div>
   );

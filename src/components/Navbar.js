@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import { context } from "../context";
 
 function Navbar() {
-  const { auth, userCredentials, setUserCredentials } = useContext(context);
+  const { auth, userId, setUserId } = useContext(context);
   const TITLE = "CINE CLUB";
 
   return (
@@ -29,7 +29,7 @@ function Navbar() {
           >
             Favoris
           </NavLink>
-          {userCredentials != null ? (
+          {userId !== "" ? (
             <NavLink
               className={(nav) =>
                 nav.isActive ? "navButtonActive" : "navButton"
@@ -37,7 +37,7 @@ function Navbar() {
               to="/"
               onClick={() => {
                 auth.signOut();
-                setUserCredentials(null);
+                setUserId("");
               }}
             >
               Déconnexion

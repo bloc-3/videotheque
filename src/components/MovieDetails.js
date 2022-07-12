@@ -3,19 +3,20 @@ import axios from "axios";
 
 import { context } from "../context";
 
-const MovieDetails = (props) => {
-  const movieId = props.location.movieId;
+const MovieDetails = ({ movieId }) => {
   const [movie, setMovie] = useState({});
+  console.log(movieId);
 
-  const axiosRequest = `https://api.themoviedb.org/3/movie/${movieId}?api_key=653b5baee25572caf2d0ff68ef6950b8&language=fr-FR`;
+  const tmdbApiRequest = `https://api.themoviedb.org/3/movie/${movieId}?api_key=653b5baee25572caf2d0ff68ef6950b8&language=fr-FR`;
 
   const dateFormater = (date) => {
     const [year, month, day] = date.split("-");
+
     return [day, month, year].join("/");
   };
 
   axios
-    .get(axiosRequest)
+    .get(tmdbApiRequest)
     .then((res) => setMovie(res.data))
     .catch((error) => {
       console.log("Impossible d'obtenir le film sélectionné.", movieId);

@@ -1,23 +1,22 @@
 import React, { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
 
 import { context } from "../../context";
-import { useNavigate } from "react-router-dom";
 
 const SignIn = () => {
-  const { auth, setUserCredentials } = useContext(context);
   const navigate = useNavigate();
+  const { auth, setUserId } = useContext(context);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
 
     const email = e.target.email.value;
     const password = e.target.password.value;
 
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredentials) => {
-        setUserCredentials(userCredentials);
+        setUserId(userCredentials.user.uid);
         console.log("connection ok ", email);
         navigate("/");
       })
