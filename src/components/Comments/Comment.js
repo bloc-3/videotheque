@@ -1,14 +1,10 @@
 import React from "react";
 
-const Comment = () => {
+const Comment = ({ nickname, comment }) => {
   return (
     <div>
-      <p className="old_comment">
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae
-        minima quo illo? In consequatur obcaecati laudantium, veritatis sapiente
-        praesentium aperiam facere quibusdam. Inventore aperiam doloribus modi,
-        nobis quasi labore laudantium.
-      </p>
+      <p className="nickname">{nickname}</p>
+      <p className="old_comment">{comment}</p>
     </div>
   );
 };

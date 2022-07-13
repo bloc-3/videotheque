@@ -72,7 +72,9 @@ const Genres = ({ genre_ids }) => {
   return (
     <ul>
       {genres.map((genre) => (
-        <li key={genre}>{genre}</li>
+        <li key={genre} className="genre">
+          {genre}
+        </li>
       ))}
     </ul>
   );

@@ -1,19 +1,18 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-import { context } from "../context";
-
 const MovieDetails = ({ movieId }) => {
   const [movie, setMovie] = useState({});
   console.log(movieId);
-
-  const tmdbApiRequest = `https://api.themoviedb.org/3/movie/${movieId}?api_key=653b5baee25572caf2d0ff68ef6950b8&language=fr-FR`;
 
   const dateFormater = (date) => {
     const [year, month, day] = date.split("-");
 
     return [day, month, year].join("/");
   };
+
+  const tmdbApiRequest = `https://api.themoviedb.org/3/movie/${movieId}?api_key=653b5baee25572caf2d0ff68ef6950b8&language=fr-FR`;
+  //const tmdbApiRequest = `https://api.themoviedb.org/3/movie/280?api_key=653b5baee25572caf2d0ff68ef6950b8&language=fr-FR`;
 
   axios
     .get(tmdbApiRequest)
@@ -42,10 +41,15 @@ const MovieDetails = ({ movieId }) => {
         ) : (
           ""
         )}
-        <div className="buttons">
-          <button>Science-fiction</button>
-          <button>Divertissement</button>
-        </div>
+        {movie.genres ? (
+          <ul>
+            {movie.genres.map((genre) => {
+              return <li key={genre.id} className="genre">{genre.name}</li>;
+            })}
+          </ul>
+        ) : (
+          ""
+        )}
         <p className="stars">
           {movie.vote_average}/10 <span>⭐</span>
         </p>

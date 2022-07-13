@@ -46,10 +46,10 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path="*" element={<Accueil />} />
-          <Route path="/" element={<Accueil />} />
-          <Route path="/connexion" element={<Connexion />} />
-          <Route path="/favoris" element={<Favoris />} />
-          <Route path={"detailsfilm"} element={<DetailsFilm />} />
+          <Route exact path="/" element={<Accueil />} />
+          <Route exact path="/connexion" element={<Connexion />} />
+          <Route exact path="/favoris" element={<Favoris />} />
+          <Route exact path="/detailsfilm" element={<DetailsFilm />} />
         </Routes>
       </BrowserRouter>
     </context.Provider>

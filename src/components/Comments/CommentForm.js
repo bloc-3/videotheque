@@ -1,6 +1,6 @@
 import React from "react";
 
-const CommentForm = () => {
+const CommentForm = ({ movieId }) => {
   return (
     <form className="comment-form">
       <input className="comment_zone" type="text" />

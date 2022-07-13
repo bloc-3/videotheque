@@ -13,7 +13,7 @@ const MovieCard = ({ movie }) => {
 
   return (
     <div>
-      <NavLink to={{ pathname: "/detailsfilm", movieId: movie.id }}>
+      <NavLink to="/detailsfilm" state={{ movieId: movie.id }}>
         <h2>{movie.title}</h2>
         <img
           src={
@@ -23,7 +23,7 @@ const MovieCard = ({ movie }) => {
           }
           alt={`Affiche du film ${movie.title}`}
         />
-        <Genres genre_ids={ movie.genre_ids } />
+        <Genres genre_ids={movie.genre_ids} />
         <h4>
           {movie.vote_average}/10 <span>⭐</span>
         </h4>
