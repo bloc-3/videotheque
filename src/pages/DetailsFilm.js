@@ -7,15 +7,14 @@ import Comments from "../components/Comments/Comments";
 
 const DetailsFilm = () => {
   const location = useLocation();
-  console.log(location);
   const movieId = location.state.movieId;
 
   return (
-    <div>
+    <>
       <Navbar />
       <MovieDetails movieId={movieId} />
-      {/* <Comments movieId={ movieId } /> */}
-    </div>
+      <Comments movieId={movieId} />
+    </>
   );
 };
 

@@ -17,11 +17,9 @@ const SignIn = () => {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredentials) => {
         setUserId(userCredentials.user.uid);
-        console.log("connection ok ", email);
         navigate("/");
       })
       .catch((error) => {
-        console.log("connection erreur ", email);
         navigate("/");
       });
   };

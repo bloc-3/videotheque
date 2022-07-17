@@ -1,9 +1,8 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
+
 import SignIn from './SignIn';
 import SignUp from './SignUp';
 
-// contenu de la page de connexion sans la navbar
 const SignForm = () => {
   const [signIn, setSignIn] = useState(true);
 

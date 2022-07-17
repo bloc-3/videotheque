@@ -4,10 +4,10 @@ import Main from "../components/Main/Main";
 
 const Accueil = () => {
   return (
-    <div>
+    <>
       <Navbar />
       <Main />
-    </div>
+    </>
   );
 };
 export default Accueil;

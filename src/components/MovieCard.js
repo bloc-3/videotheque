@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+
 import Genres from "./Genres";
 
 const MovieCard = ({ movie }) => {
@@ -9,7 +10,9 @@ const MovieCard = ({ movie }) => {
     console.log("ajouté");
   };
 
-  const removeFromFavorites = () => {};
+  const removeFromFavorites = () => {
+    console.log("retiré");
+  };
 
   return (
     <div>

@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 const MovieDetails = ({ movieId }) => {
   const [movie, setMovie] = useState({});
-  console.log(movieId);
 
   const dateFormater = (date) => {
     const [year, month, day] = date.split("-");
@@ -11,15 +10,16 @@ const MovieDetails = ({ movieId }) => {
     return [day, month, year].join("/");
   };
 
-  const tmdbApiRequest = `https://api.themoviedb.org/3/movie/${movieId}?api_key=653b5baee25572caf2d0ff68ef6950b8&language=fr-FR`;
-  //const tmdbApiRequest = `https://api.themoviedb.org/3/movie/280?api_key=653b5baee25572caf2d0ff68ef6950b8&language=fr-FR`;
+  useEffect(() => {
+    const tmdbApiRequest = `https://api.themoviedb.org/3/movie/${movieId}?api_key=653b5baee25572caf2d0ff68ef6950b8&language=fr-FR`;
 
-  axios
-    .get(tmdbApiRequest)
-    .then((res) => setMovie(res.data))
-    .catch((error) => {
-      console.log("Impossible d'obtenir le film sélectionné.", movieId);
-    });
+    axios
+      .get(tmdbApiRequest)
+      .then((res) => setMovie(res.data))
+      .catch((error) => {
+        console.log("Impossible d'obtenir le film sélectionné.", movieId);
+      });
+  }, []);
 
   return (
     <div className="detail_page">
@@ -44,7 +44,11 @@ const MovieDetails = ({ movieId }) => {
         {movie.genres ? (
           <ul>
             {movie.genres.map((genre) => {
-              return <li key={genre.id} className="genre">{genre.name}</li>;
+              return (
+                <li key={genre.id} className="genre">
+                  {genre.name}
+                </li>
+              );
             })}
           </ul>
         ) : (

@@ -29,7 +29,7 @@ function Navbar() {
           >
             Favoris
           </NavLink>
-          {userId !== "" ? (
+          {userId !== null ? (
             <NavLink
               className={(nav) =>
                 nav.isActive ? "navButtonActive" : "navButton"
@@ -37,7 +37,7 @@ function Navbar() {
               to="/"
               onClick={() => {
                 auth.signOut();
-                setUserId("");
+                setUserId(null);
               }}
             >
               Déconnexion

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
+
 import MovieSearchBar from "./MovieSearchBar";
 import Movies from "../Movies";
 
-// contenu de la page d'accueil sans la navbar
 const Main = () => {
   const [movies, setMovies] = useState([]);
   const [sortingOrder, setSortingOrder] = useState("descending");
