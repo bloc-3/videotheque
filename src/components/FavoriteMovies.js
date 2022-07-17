@@ -17,7 +17,9 @@ const FavoriteMovies = () => {
         where("user_id", "==", userId)
       );
       const querySnapshot = await getDocs(q);
-      const moviesIds = await querySnapshot.docs.map((doc) => doc.data().favorite_movies);
+      const moviesIds = await querySnapshot.docs.map(
+        (doc) => doc.data().favorite_movies
+      );
 
       const tmdbMovies = await moviesIds.map(async (movieId) => {
         const tmdbApiRequest = `https://api.themoviedb.org/3/movie/${movieId}?api_key=653b5baee25572caf2d0ff68ef6950b8&language=fr-FR`;
