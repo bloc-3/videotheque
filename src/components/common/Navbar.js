@@ -1,15 +1,15 @@
 import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 
-import { context } from "../context";
+import { context } from "../../context";
 
-function Navbar() {
-  const { auth, userId, setUserId } = useContext(context);
+const Navbar = () => {
+  const { auth, userId } = useContext(context);
   const TITLE = "CINE CLUB";
 
   return (
     <div className="globalNAV">
-      <img className="logo" src="./images/logo.svg" alt="logo" />
+      <img className="logo" src="../images/logo.svg" alt="logo" />
       <h1>{TITLE}</h1>
       <nav>
         <ul>
@@ -37,7 +37,6 @@ function Navbar() {
               to="/"
               onClick={() => {
                 auth.signOut();
-                setUserId(null);
               }}
             >
               Déconnexion
@@ -56,6 +55,6 @@ function Navbar() {
       </nav>
     </div>
   );
-}
+};
 
 export default Navbar;

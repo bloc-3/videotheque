@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Navbar from '../components/Navbar';
-import SignForm from '../components/SignForm/SignForm';
+import Navbar from '../components/common/Navbar';
+import SignForm from '../components/connexion/SignForm';
 
 const Connexion = () => {
   return (

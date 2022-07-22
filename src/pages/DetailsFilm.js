@@ -1,19 +1,18 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
-import Navbar from "../components/Navbar";
-import MovieDetails from "../components/MovieDetails";
-import Comments from "../components/Comments/Comments";
+import Navbar from "../components/common/Navbar";
+import MovieDetails from "../components/detailsfilms/MovieDetails";
+//import Comments from "../components/detailsfilms/Comments";
 
 const DetailsFilm = () => {
-  const location = useLocation();
-  const movieId = location.state.movieId;
+  const { movieId } = useParams();
 
   return (
     <>
       <Navbar />
       <MovieDetails movieId={movieId} />
-      <Comments movieId={movieId} />
+      {/* <Comments movieId={movieId} /> */}
     </>
   );
 };

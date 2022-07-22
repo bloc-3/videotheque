@@ -1,12 +1,9 @@
-import React from "react";
-import { useContext } from "react";
+import React, { useState, useContext } from "react";
 import { collection, getDocs, query, where } from "firebase/firestore";
 
 import { context } from "../../context";
-
 import Comment from "./Comment";
 import CommentForm from "./CommentForm";
-import { useState } from "react";
 
 const Comments = async ({ movieId }) => {
   const { db } = useContext(context);

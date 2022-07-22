@@ -5,9 +5,9 @@ const MovieSearchBar = ({ setMovies, setSortingOrder }) => {
   const [search, setSearch] = useState("cars");
   const [topButtonActive, setTopButtonActive] = useState(true);
 
-  const tmdbApiRequest = `https://api.themoviedb.org/3/search/movie?api_key=653b5baee25572caf2d0ff68ef6950b8&query=${search}&language=fr-FR`;
-
   useEffect(() => {
+    const tmdbApiRequest = `https://api.themoviedb.org/3/search/movie?api_key=653b5baee25572caf2d0ff68ef6950b8&query=${search}&language=fr-FR`;
+    
     axios
       .get(tmdbApiRequest)
       .then((res) => {

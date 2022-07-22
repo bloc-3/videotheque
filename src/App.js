@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
-import { getFirestore, collection } from "firebase/firestore";
+import { getFirestore } from "firebase/firestore";
 
 import { context } from "./context";
 
@@ -26,30 +26,22 @@ initializeApp(firebaseConfig);
 const auth = getAuth();
 const db = getFirestore();
 
-//db.settings({ timestampsInSnapshots: true });
-
-//const collectionReference = collection(db, "favorite_movies");
-//auth.onAuthStateChanged((user) => {console.log(user.uid);});
-
 const App = () => {
   const [userId, setUserId] = useState(null);
-  const [movieId, setMovieId] = useState({});
 
   auth.onAuthStateChanged((user) => {
     setUserId(user ? user.uid : null);
   });
 
   return (
-    <context.Provider
-      value={{ auth, db, userId, setUserId, movieId, setMovieId }}
-    >
+    <context.Provider value={{ auth, db, userId }}>
       <BrowserRouter>
         <Routes>
           <Route path="*" element={<Accueil />} />
           <Route exact path="/" element={<Accueil />} />
           <Route exact path="/favoris" element={<Favoris />} />
           <Route exact path="/connexion" element={<Connexion />} />
-          <Route exact path="/detailsfilm" element={<DetailsFilm />} />
+          <Route exact path="/detailsfilm/:movieId" element={<DetailsFilm />} />
         </Routes>
       </BrowserRouter>
     </context.Provider>

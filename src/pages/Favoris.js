@@ -1,6 +1,7 @@
 import React from "react";
-import Navbar from '../components/Navbar';
-import FavoriteMovies from "../components/FavoriteMovies";
+
+import Navbar from '../components/common/Navbar';
+import FavoriteMovies from "../components/favoris/FavoriteMovies";
 
 const Favoris = () => {
   return (

@@ -4,19 +4,21 @@ import { NavLink } from "react-router-dom";
 import Genres from "./Genres";
 
 const MovieCard = ({ movie }) => {
-  const isFavorite = true;
+  let isFavorite = false;
 
   const addToFavorites = () => {
     console.log("ajouté");
+    isFavorite = true;
   };
 
   const removeFromFavorites = () => {
     console.log("retiré");
+    isFavorite = false;
   };
 
   return (
     <div>
-      <NavLink to="/detailsfilm" state={{ movieId: movie.id }}>
+      <NavLink to={`/detailsfilm/${movie.id}`}>
         <h2>{movie.title}</h2>
         <img
           src={
@@ -31,15 +33,6 @@ const MovieCard = ({ movie }) => {
           {movie.vote_average}/10 <span>⭐</span>
         </h4>
       </NavLink>
-      {isFavorite ? (
-        <div className="btn" onClick={() => addToFavorites()}>
-          Ajouter aux favoris
-        </div>
-      ) : (
-        <div className="btn" onClick={() => removeFromFavorites()}>
-          Retirer des favoris
-        </div>
-      )}
     </div>
   );
 };
