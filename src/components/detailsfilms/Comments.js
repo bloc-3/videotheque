@@ -1,33 +1,22 @@
-import React, { useState, useContext } from "react";
-import { collection, getDocs, query, where } from "firebase/firestore";
+import React, { useState } from "react";
 
-import { context } from "../../context";
 import Comment from "./Comment";
 import CommentForm from "./CommentForm";
 
-const Comments = async ({ movieId }) => {
-  const { db } = useContext(context);
+const Comments = ({ movieId }) => {
   const [comments, setComments] = useState([]);
 
   const nickname = "flash";
 
-  const commentsCollection = collection(db, "comments");
-  const q = query(commentsCollection, where("movie_id", "==", movieId));
-  setComments(await getDocs(q));
-
-  // const favoriteMoviesCollection = collection(db, "favorite_movies");
-  // const nicknamesCollection = collection(db, "nicknames");
 
   return (
     <div className="comments-section">
       <CommentForm movieId={movieId} />
       <ul>
-        {comments.map((doc) => {
-          console.log(doc.id, " => ", doc.data());
+        {comments.map((comment) => {
           return (
-            <li key={doc.id} className="comment">
-              commentaire
-              {/* <Comment nickname={nickname} comment={doc.data} /> */}
+            <li key={Math.random()} className="comment">
+              <Comment nickname={nickname} comment={"vide"} />
             </li>
           );
         })}

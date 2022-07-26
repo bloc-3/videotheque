@@ -4,18 +4,6 @@ import { NavLink } from "react-router-dom";
 import Genres from "./Genres";
 
 const MovieCard = ({ movie }) => {
-  let isFavorite = false;
-
-  const addToFavorites = () => {
-    console.log("ajouté");
-    isFavorite = true;
-  };
-
-  const removeFromFavorites = () => {
-    console.log("retiré");
-    isFavorite = false;
-  };
-
   return (
     <div>
       <NavLink to={`/detailsfilm/${movie.id}`}>

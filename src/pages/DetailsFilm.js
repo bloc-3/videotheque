@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 
 import Navbar from "../components/common/Navbar";
 import MovieDetails from "../components/detailsfilms/MovieDetails";
-//import Comments from "../components/detailsfilms/Comments";
+import Comments from "../components/detailsfilms/Comments";
 
 const DetailsFilm = () => {
   const { movieId } = useParams();
@@ -12,7 +12,7 @@ const DetailsFilm = () => {
     <>
       <Navbar />
       <MovieDetails movieId={movieId} />
-      {/* <Comments movieId={movieId} /> */}
+      <Comments movieId={movieId} />
     </>
   );
 };
