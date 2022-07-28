@@ -1,69 +1,87 @@
-.SignInForm {
-    // display: flex;
-    background-color: $color1;
-    margin: 0 auto;
-    padding: 1em;
-    border-radius: 1em;
-    width: 40em;
+@import './variables';
 
-    .buttons {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        font-weight: bold;
+.SignForm {
+  // display: flex;
+  background-color: $color1;
+  margin: 0 auto;
+  padding: 1em;
+  border-radius: 1em;
+  border: 0.1em solid $color2;
+  width: 40em;
 
-        div {
-          background-color: $color2;
-          color: white;
-          margin: 0.5em; 
-          padding: 0.5em;
-          border-radius: 0.5em;
-        }
+  .buttons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-weight: bold;
 
-        div:hover {
-          background-color: $color3;
-        }
-      
-        .activeButton {
-          background-color: white;
-          color: $color2;
-        }
+    div {
+      background-color: $color2;
+      color: white;
+      margin: 0.5em;
+      padding: 0.5em;
+      border-radius: 0.5em;
+
+      &:hover {
+        background-color: $color3;
+      }
     }
-    
-    .signform {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        border-radius: 0.5em;
-        border: 1px solid $color2;
-        border-color: $color2;
-        height: 20em;
 
-        .signForm {
-            display: flex;
-            flex-direction: column;
-            flex-wrap: nowrap;
-            justify-content: flex-start;
-            align-items: stretch;
-            align-content: stretch;
+    // div:hover {
+    //   background-color: $color3;
+    // }
 
-        }
-        
-        input {
-            margin: 0.5em;
-            padding: 0.5em;
-            border-radius: 0.5em;
-            border: none;
-            flex-direction: column;
-        }
-
-        input[type="submit"] {
-            background-color: $color2;
-            color: white;
-            margin: 0.5em; 
-            padding: 0.5em;
-            border-radius: 0.5em;
-        }
+    .activeButton {
+      background-color: white;
+      color: $color2;
     }
+  }
+
+  .signform {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5em;
+
+    // border: 1px solid $color2;
+    // border-color: $color2;
+    height: 20em;
+
+    .signInForm, .signUpForm {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      align-items: stretch;
+      align-content: stretch;
+    }
+
+    input {
+      margin: 0.5em;
+      padding: 0.5em;
+      border-radius: 0.5em;
+      border: none;
+      flex-direction: column;
+    }
+
+    input[type="submit"] {
+      background-color: $color2;
+      color: white;
+      // margin: 1em;
+      // padding: 0.5em;
+
+      border-radius: 0.5em;
+      justify-content: space-around;
+      align-items: center;
+      font-weight: bold;
+    }
+  }
 }
+
+// .SignForm {
+//   display: flex;
+//   background-color: $color1;
+//   border: 5px solid $color2;
+//   .buttons
+// }
