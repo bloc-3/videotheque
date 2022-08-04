@@ -1,13 +1,13 @@
-import React from "react";
-
-import Navbar from "../components/common/Navbar";
-import Main from "../components/accueil/Main";
+import Header from "../components/header/Header";
+import Main from "../components/home/Main";
+import Footer from "../components/footer/Footer";
 
 const Accueil = () => {
   return (
     <>
-      <Navbar />
+      <Header />
       <Main />
+      <Footer />
     </>
   );
 };
