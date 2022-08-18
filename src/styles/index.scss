@@ -4,6 +4,10 @@
 @import "./details_film";
 @import "./variables";
 
+@font-face {
+  font-family: 'test';
+  src: url(../assets/fonts/Parisienne-Regular.ttf);
+}
 //reset
 
 body {

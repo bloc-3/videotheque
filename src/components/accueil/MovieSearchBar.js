@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 const MovieSearchBar = ({ setMovies, setSortingOrder }) => {
-  const [search, setSearch] = useState("cars");
+  const [search, setSearch] = useState("ide");
   const [topButtonActive, setTopButtonActive] = useState(true);
 
   useEffect(() => {

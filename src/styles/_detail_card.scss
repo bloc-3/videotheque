@@ -1,65 +1,78 @@
 @import "./variables";
-*{
+
+* {
   margin: 0;
 }
-.resp{
+
+.resp {
   width: 100%;
   height: auto;
 }
-.detail_page{
+
+.detail_page {
   display: flex;
   align-items: center;
   background-color: $color3;
   padding-top: 3rem;
   height: 90vh;
 }
+
 .title {
   margin-left: 3rem;
   margin-bottom: 1rem;
   color: white;
 }
+
 .film_poster {
   width: 250px;
   height: auto;
   margin-left: 3rem;
   margin-bottom: 1rem;
 }
-.buttons{
+
+.buttons {
   display: flex;
   justify-content: space-between;
   width: 250px;
   margin-left: 3rem;
   margin-bottom: 1rem;
 }
-.stars{
+
+.stars {
   margin-left: 3rem;
   margin-bottom: 1rem;
 }
-.heart{
+
+.heart {
   margin-left: 3rem;
 }
-.detail_part_right{
+
+.detail_part_right {
   margin-left: 6rem;
   margin-right: 2rem;
   padding-top: 10rem;
   height: 100%;
 }
-.comment_zone{
+
+.comment_zone {
   height: 100px;
   width: 90%;
 }
-.valid_button{
+
+.valid_button {
   height: 35px;
   width: 10%;
   background-color: $color2;
   color: white;
   margin-bottom: 2rem;
 }
-.movie_detail{
+
+.movie_detail {
   margin-bottom: 2rem;
   color: white;
 }
-.old_comment{
+
+.old_comment {
   margin-bottom: 1rem;
   padding: 10px;
   border-radius: 10px;

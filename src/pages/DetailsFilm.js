@@ -11,8 +11,10 @@ const DetailsFilm = () => {
   return (
     <>
       <Navbar />
-      <MovieDetails movieId={movieId} />
-      <Comments movieId={movieId} />
+      <div className="detailFilm">
+        <MovieDetails movieId={movieId} />
+        <Comments movieId={movieId} />
+      </div>
     </>
   );
 };

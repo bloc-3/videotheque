@@ -32,48 +32,52 @@ const MovieDetails = ({ movieId }) => {
     <>
       {isPending && <p>Chargement des données du film {movieId}</p>}
       {movie ? (
-        <div className="detailFilm">
-          <h1 className="title">{movie.title}</h1>
-          <div className="film_poster">
-            <img
-              className="resp"
-              src={
-                movie.poster_path
-                  ? "https://image.tmdb.org/t/p/w500" + movie.poster_path
-                  : "./images/Poster.jpg"
-              }
-              alt={`Affiche du film ${movie.title}`}
-            />
+        <div className="movieDetails">
+          <div className="cardFilmDe">
+            <h1 className="title">{movie.title}</h1>
+            <div className="film_poster">
+              <img
+                className="resp"
+                src={
+                  movie.poster_path
+                    ? "https://image.tmdb.org/t/p/w500" + movie.poster_path
+                    : "./images/Poster.jpg"
+                }
+                alt={`Affiche du film ${movie.title}`}
+              />
+            </div>
+            <div className="movieInfo">
+              {movie.genres ? (
+                <ul className="genres">
+                  {movie.genres.map((genre) => {
+                    return (
+                      <li key={genre.id} className="genre">
+                        {genre.name}
+                      </li>
+                    );
+                  })}
+                </ul>
+              ) : (
+                ""
+              )}
+              {movie.release_date ? (
+                <h5 className="release">
+                  Sorti le : {dateFormater(movie.release_date)}
+                </h5>
+              ) : (
+                ""
+              )}
+              <p className="stars">
+                {movie.vote_average}/10 <span>⭐</span>
+              </p>
+              <p className="heart">❤️</p>
+            </div>
           </div>
-          <div className="movieInfo">
-            {movie.release_date ? (
-              <h5>Sorti le : {dateFormater(movie.release_date)}</h5>
-            ) : (
-              ""
-            )}
-            {movie.genres ? (
-              <ul>
-                {movie.genres.map((genre) => {
-                  return (
-                    <li key={genre.id} className="genre">
-                      {genre.name}
-                    </li>
-                  );
-                })}
-              </ul>
-            ) : (
-              ""
-            )}
-            <p className="stars">
-              {movie.vote_average}/10 <span>⭐</span>
-            </p>
-            <p className="heart">❤️</p>
-          </div>
-          <div className="movie_detail">
+          <div className="synopsisDiv">
             {movie.overview ? (
               <div>
-                <h3>Synopsis</h3>
-                <p>{movie.overview}</p>
+                <h1>Synopsis</h1>
+                <p className="synopsis">{movie.overview}</p>
               </div>
             ) : (
               ""
