@@ -1,8 +1,11 @@
-const Comment = ({ nickname, comment }) => {
+const Comment = ({ commentId, nickname, comment }) => {
   return (
     <>
-      <p className="nickname">{nickname}</p>
-      <p className="comment_data">{comment}</p>
+      <p className="comment_data">
+        <span className="nickname">{nickname}</span> :{" "}
+        <span className="comment">{comment}</span>
+      </p>
+      {}
     </>
   );
 };
