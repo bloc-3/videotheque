@@ -33,6 +33,7 @@ const Comments = ({ movieId }) => {
           setComments((previous) => {
             const newComment = {
               id: commentId,
+              authorId: commentUserId,
               nickname: commentNickname,
               comment: commentMessage,
             };
@@ -53,6 +54,7 @@ const Comments = ({ movieId }) => {
             <li key={comment.id} className="comment">
               <Comment
                 commentId={comment.id}
+                author={comment.authorId}
                 nickname={comment.nickname}
                 comment={comment.comment}
               />
