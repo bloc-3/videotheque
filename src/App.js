@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import { initializeApp } from "firebase/app";
@@ -13,12 +13,13 @@ import Favoris from "./pages/Favoris";
 import DetailsFilm from "./pages/DetailsFilm";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAhfMviuWeWqdPQAwAJ_5wE_fZK_oRrNrM",
-  authDomain: "videotheque-perso.firebaseapp.com",
-  projectId: "videotheque-perso",
-  storageBucket: "videotheque-perso.appspot.com",
-  messagingSenderId: "591632957401",
-  appId: "1:591632957401:web:2e06475160459ae9f963c8",
+  apiKey: "AIzaSyAdE6FYNcx1Nin59iYFFXQ_QKnjmrxaI1s",
+  authDomain: "cubetest3-a2c98.firebaseapp.com",
+  projectId: "cubetest3-a2c98",
+  storageBucket: "cubetest3-a2c98.appspot.com",
+  messagingSenderId: "1082971056097",
+  appId: "1:1082971056097:web:fdaa24a814a4a43d9994a0",
+  measurementId: "G-QERLKMR8BS",
 };
 
 initializeApp(firebaseConfig);

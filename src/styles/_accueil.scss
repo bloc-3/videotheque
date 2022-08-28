@@ -1,1 +1,161 @@
-@import "./variables"
+@import "./variables";
+
+
+
+.mainAcceuil {
+
+    .searchCard {
+        //background-color: red;
+
+
+        .card-body {
+            text-align: center;
+            //background-color: red;
+        }
+
+        form {
+            width: 15vw;
+            margin: 0 auto;
+            //background-color: red;
+
+            input[type="text"] {
+                //padding: 1px 10px;
+                border-radius: 10px 10px 0 0;
+                border: none;
+                font-size: 1.5rem;
+                display: block;
+                margin: 0 auto;
+                width: 100%;
+                height: 3vw;
+                outline: none;
+                text-align: center;
+                font-size: 2vw;
+                //background-color: red;
+            }
+        }
+
+        .btn-sort-container {
+            margin: auto;
+            width: 15vw;
+            height: 1.5vw;
+            display: flex;
+            justify-content: space-around;
+            cursor: pointer;
+            //background-color: red;
+            padding: auto;
+
+            #goodToBad {
+                border-radius: 0px 0px 0px 10px;
+            }
+
+            #badToGood {
+                border-radius: 0px 0px 10px 0px;
+            }
+
+            #goodToBad,
+            #badToGood {
+                background: $color1;
+                width: 50%;
+                //transition: 3s;
+                position: relative;
+                color: $color5;
+                font-size: 1vw;
+                text-align: center;
+                vertical-align: center;
+                font-weight: bold;
+
+                &:hover {
+                    background: $color2;
+                }
+            }
+        }
+    }
+
+    .listCards {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 5px;
+
+
+        .cards {
+            width: calc(100% / 4 - 20px);
+            margin: 5px auto;
+            background-color: $color1;
+            border-radius: 10px;
+            height: 60%;
+
+            .card {
+                text-decoration: none;
+            }
+
+
+            .cardHeader {
+                height: 5%;
+
+                .cardTitle {
+                    font-size: 1.5vw;
+                    font-weight: bold;
+                    color: $color5;
+                    text-align: center;
+                    vertical-align: center;
+                }
+            }
+
+            img {
+                width: 100%;
+                height: 40vw;
+            }
+
+            .cardBody {
+                height: 45%;
+
+                //background-color: red;
+                .genre {
+                    display: inline;
+                    list-style-type: none;
+                    color: $color5;
+
+                }
+            }
+        }
+
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .mainAcceuil {
+        .listCards {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 5px;
+
+            .cards {
+                width: calc(100% / 3 - 20px);
+                margin: 5px auto;
+                background-color: $color2;
+                border-radius: 10px;
+                height: 60%;
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width: 425px) {
+    .mainAcceuil {
+        .listCards {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 5px;
+
+            .cards {
+                width: calc(100% / 2 - 20px);
+                margin: 5px auto;
+                background-color: $color2;
+                border-radius: 10px;
+                height: 60%;
+            }
+        }
+    }
+
+}

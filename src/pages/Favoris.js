@@ -1,13 +1,13 @@
-import React from "react";
-
-import Navbar from '../components/common/Navbar';
-import FavoriteMovies from "../components/favoris/FavoriteMovies";
+import Header from "../components/header/Header";
+import FavoriteMovies from "../components/favoritemovies/FavoriteMovies";
+import Footer from "../components/footer/Footer";
 
 const Favoris = () => {
   return (
     <>
-      <Navbar />
+      <Header />
       <FavoriteMovies />
+      <Footer />
     </>
   );
 };

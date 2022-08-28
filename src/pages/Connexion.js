@@ -1,13 +1,13 @@
-import React from 'react';
-
-import Navbar from '../components/common/Navbar';
-import SignForm from '../components/connexion/SignForm';
+import Header from "../components/header/Header";
+import SignForm from "../components/connexion/SignForm";
+import Footer from "../components/footer/Footer";
 
 const Connexion = () => {
   return (
     <>
-      <Navbar />
+      <Header />
       <SignForm />
+      <Footer />
     </>
   );
 };

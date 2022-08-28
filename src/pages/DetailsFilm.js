@@ -1,20 +1,21 @@
-import React from "react";
 import { useParams } from "react-router-dom";
 
-import Navbar from "../components/common/Navbar";
-import MovieDetails from "../components/detailsfilms/MovieDetails";
-import Comments from "../components/detailsfilms/Comments";
+import Header from "../components/header/Header";
+import MovieDetails from "../components/moviedetails/MovieDetails";
+import Comments from "../components/moviedetails/Comments";
+import Footer from "../components/footer/Footer";
 
 const DetailsFilm = () => {
   const { movieId } = useParams();
 
   return (
     <>
-      <Navbar />
-      <div className="detailFilm">
+      <Header />
+      <main className="detailFilm">
         <MovieDetails movieId={movieId} />
         <Comments movieId={movieId} />
-      </div>
+      </main>
+      <Footer />
     </>
   );
 };
