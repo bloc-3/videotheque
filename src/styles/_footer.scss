@@ -1,12 +1,17 @@
 @import "./variables";
 
 .footer {
+  text-align: center;
+  vertical-align: middle;
   background-color: $color2;
-  padding: 16px;
-  margin-top: 16px;
-}
+  //padding: 1vw;
+  margin-top: 1vw;
+  height: 10vh;
 
-.footer p {
-  margin: 0;
-  color: $color5;
+  p {
+    
+    text-align: center;
+    margin: 0;
+    color: $color5;
+  }
 }

@@ -2,14 +2,18 @@
 
 .detailFilm {
     display: flex;
-    padding: auto;
+    //padding: auto;
     //height: 39vw;
     margin-top: -1vw;
     //border: 1px solid $color2;
     width: 100%;
+    height: 75vh;
 
     .movieDetails {
         display: flex;
+        //border: 1px solid red;
+        width: 75%;
+        margin-right: -7vw;
 
         .cardFilmDe {
             display: block;
@@ -43,11 +47,17 @@
                     display: flex;
                     list-style-type: none;
                     margin: 0 auto;
+                    text-align: center;
+                    border: 1px solid red;
+                    padding: 0;
 
                     li {
+                        height: 1vw;
+                        width: 5vw;
+                        font-size: 1vw;
                         background-color: $color3;
                         color: $color5;
-                        padding: 0.5rem;
+                        padding: 0.5vw;
                         border-radius: 20%;
                         margin-right: 1vw;
                     }
@@ -56,7 +66,7 @@
                 .release,
                 .stars {
                     margin: 1px ;
-                    font-size: large;
+                    font-size: 1.5vw;
                     //display: inline;
                     //border: 1px solid blue;
                 }
@@ -64,17 +74,21 @@
         }
 
         .synopsisDiv {
-            width: 45rem;
+            width: 50%;
             display: block;
+            border: 1px solid red;
+            height: 35vw;
 
             h1 {
-                padding-top: 1rem;
+                //padding-top: 1vw;
                 text-align: center;
                 vertical-align: auto;
+                font-size: 2vw;
             }
 
             .synopsis {
-                font-size: 2rem;
+                padding-top: 0.5vw;
+                font-size: 1.7vw;
             }
         }
     }
