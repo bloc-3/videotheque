@@ -16,6 +16,7 @@ const Comment = ({ commentId, author, nickname, comment }) => {
     updateDoc(documentComment, {
       comment: newComment,
     });
+    window.location.reload();
   };
 
   const deleteComment = () => {
@@ -23,6 +24,7 @@ const Comment = ({ commentId, author, nickname, comment }) => {
 
     deleteDoc(documentComment).then(() => {
       // vide
+      window.location.reload();
     });
   };
 

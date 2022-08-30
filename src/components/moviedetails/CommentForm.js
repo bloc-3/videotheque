@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { collection, addDoc } from "firebase/firestore";
 
 import { context } from "../../context";
@@ -19,6 +19,7 @@ const CommentForm = ({ movieId }) => {
       comment: comment,
     }).then(() => {
       //vide
+      window.location.reload();
     });
   };
 
