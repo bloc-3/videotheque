@@ -5,29 +5,38 @@
     padding: auto;
     //height: 39vw;
     margin-top: -1vw;
-    border: 1px solid $color2;
+    //border: 1px solid $color2;
+    width: 100%;
 
     .movieDetails {
         display: flex;
 
         .cardFilmDe {
             display: block;
-            margin: 0 3rem 0 3rem;
+            padding: 0 3rem 0 3rem;
             text-align: center;
-            border: 1px solid blueviolet;
+            //border: 1px solid blueviolet;
+            height: 36vw;
+            width: 25%;
 
             .title {
-                padding-top: 1rem;
-                margin-bottom: 1rem;
+                //padding-top: 1rem;
+                //margin-bottom: 1rem;
+                height: 10%;
+                //border:  1px solid red;
             }
 
             .film_poster img {
-                width: 25rem;
-                height: auto;
+                width: 15vw;
+                height: 50%;
+                //border: 1px solid red;
                 margin-bottom: 1rem;
             }
 
             .movieInfo {
+                height: 12%;
+                //overflow: hidden;
+                //border: 1px solid red;
 
                 .genres {
                     display: flex;
@@ -39,20 +48,16 @@
                         color: $color5;
                         padding: 0.5rem;
                         border-radius: 20%;
-                        margin-right: 1rem;
+                        margin-right: 1vw;
                     }
                 }
 
                 .release,
                 .stars {
-                    margin-left: 3rem;
+                    margin: 1px ;
                     font-size: large;
-                }
-
-                .heart,
-                .stars {
-                    display: inline;
-                    margin-left: 3rem;
+                    //display: inline;
+                    //border: 1px solid blue;
                 }
             }
         }
@@ -74,7 +79,7 @@
     }
 
     .comments-section {
-        border: 1px solid green;
+        //border: 1px solid green;
         padding: 1vw;
         margin-left: 5vw;
         .commentForm {
@@ -88,7 +93,7 @@
                 height: 3vw;
                 border-radius: 10px 10px 0 0;
                 font-size: 1.5rem;
-                border: 5px solid red;
+                //border: 5px solid red;
             }
         }
 

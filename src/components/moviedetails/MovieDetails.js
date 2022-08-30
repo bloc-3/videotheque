@@ -61,9 +61,9 @@ const MovieDetails = ({ movieId }) => {
                 ""
               )}
               {movie.release_date ? (
-                <h5 className="release">
+                <p className="release">
                   Sorti le : {dateFormater(movie.release_date)}
-                </h5>
+                </p>
               ) : (
                 ""
               )}
