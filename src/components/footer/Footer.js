@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className="bg-primary ">
+    <footer className="footer">
       <p className="text-center">
         Par Jérôme BARBIER, Nicolas FERCHAUD, Esteban MARTEL. Le code source est
         sous licence
