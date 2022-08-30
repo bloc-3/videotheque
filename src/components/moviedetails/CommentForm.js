@@ -24,14 +24,14 @@ const CommentForm = ({ movieId }) => {
 
   return (
     <>
-    <div classname="commentFormContainer">
-      {userId === null ? (
-        <p className="notConnected">
-          Connectez vous pour ajouter un commentaire
-        </p>
-      ) : (
-        <form className="commentForm" onSubmit={addComment}>
-          {/* <textarea
+      <div classname="commentFormContainer">
+        {userId === null ? (
+          <p className="notConnected">
+            Connectez vous pour ajouter un commentaire
+          </p>
+        ) : (
+          <form className="commentForm" onSubmit={addComment}>
+            {/* <textarea
             name="comment"
             className="comment_zone"
             rows="10"
@@ -41,17 +41,17 @@ const CommentForm = ({ movieId }) => {
               comment = e.target.value;
             }}
           ></textarea> */}
-          <input
-            type="text"
-            classname="commentInput"
-            placeholder="Saisissez votre commentaire ici."
-            onchange={(e) => {
-              comment = e.target.value;
-            }}
-          />
-          <input type="submit" value="Poster" />
-        </form>
-      )}
+            <input
+              type="text"
+              classname="commentInput"
+              placeholder="Saisissez votre commentaire ici."
+              onChange={(e) => {
+                comment = e.target.value;
+              }}
+            />
+            <input type="submit" value="Poster" />
+          </form>
+        )}
       </div>
     </>
   );

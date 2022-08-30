@@ -33,14 +33,14 @@ const Comment = ({ commentId, author, nickname, comment }) => {
           <input
             type="text"
             className="comment_zone"
-            value={comment}
+            defaultValue={newComment}
             onChange={(e) => {
               newComment = e.target.value;
             }}
           />
 
           <button value="Poster" onClick={updateComment}>
-            Modifier commentaire
+            Sauvegarder
           </button>
         </div>
       ) : (

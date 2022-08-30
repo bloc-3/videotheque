@@ -13,13 +13,13 @@ import Favoris from "./pages/Favoris";
 import DetailsFilm from "./pages/DetailsFilm";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAdE6FYNcx1Nin59iYFFXQ_QKnjmrxaI1s",
-  authDomain: "cubetest3-a2c98.firebaseapp.com",
-  projectId: "cubetest3-a2c98",
-  storageBucket: "cubetest3-a2c98.appspot.com",
-  messagingSenderId: "1082971056097",
-  appId: "1:1082971056097:web:fdaa24a814a4a43d9994a0",
-  measurementId: "G-QERLKMR8BS",
+  apiKey: "AIzaSyC1Y72KYrMkKaTPW8aG-9yicUrn203aOV0",
+  authDomain: "cube3-a88eb.firebaseapp.com",
+  projectId: "cube3-a88eb",
+  storageBucket: "cube3-a88eb.appspot.com",
+  messagingSenderId: "862736525998",
+  appId: "1:862736525998:web:bd960f8aaa7ec6a352db3f",
+  measurementId: "G-24P9DPJT9C"
 };
 
 initializeApp(firebaseConfig);
