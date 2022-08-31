@@ -55,8 +55,9 @@ const Comment = ({ commentId, author, nickname, comment }) => {
         </p>
       )}
       {userId === author ? (
-        <div>
+        <div className="commentButtons">
           <button
+            className="buttonEditComment"
             onClick={() => {
               setModifyingComment(true);
               console.log(modifyingComment);
@@ -64,7 +65,7 @@ const Comment = ({ commentId, author, nickname, comment }) => {
           >
             Modifier
           </button>
-          <button onClick={deleteComment}>Supprimer</button>
+          <button className="buttonDeleteComment" onClick={deleteComment}>Supprimer</button>
         </div>
       ) : (
         <></>

@@ -126,12 +126,26 @@
             }
         }
 
-        ul .comment .comment_data {
-            font-size: calc((2vh + 2vw)/2);
+        ul .comment {
+            .comment_data {
+                font-size: calc((2vh + 2vw)/2);
 
-            .nickname {
-                font-weight: bold;
+                .nickname {
+                    font-weight: bold;
+                }
+            }
 
+            .commentButtons {
+                .buttonDeleteComment .buttonEditComment {
+                    background-color: $color1;
+                    border: 1px solid $color1;
+                }
+                .buttonEditComment {
+                    border-radius: 10px 0 0 10px;
+                }
+                .buttonDeleteComment {
+                    border-radius: 0 10px 10px 0;
+                }
             }
         }
 
