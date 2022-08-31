@@ -17,7 +17,9 @@ const Comment = ({ commentId, author, nickname, comment }) => {
       user_id: userId,
       comment: newComment,
     });
-    window.location.reload();
+    setTimeout(() => {
+      window.location.reload();
+    }, "500");
   };
 
   const deleteComment = () => {

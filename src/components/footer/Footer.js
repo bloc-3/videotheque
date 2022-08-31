@@ -11,8 +11,8 @@ const Footer = () => {
           {" "}
           MIT
         </a>
-        . Cette application utilise l'API TMDB mais n'est pas soutenu ni
-        certifié par TMDB.
+        . Cette application utilise l'API TMDB mais n'est pas soutenue ni
+        certifiée par TMDB.
       </p>
     </footer>
   );
