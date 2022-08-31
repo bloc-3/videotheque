@@ -51,7 +51,8 @@
                     border: 1px solid red;
                     padding: 0;
 
-                    li {
+
+                    .genre {
                         height: 1vw;
                         width: 5vw;
                         font-size: 1vw;
@@ -59,13 +60,13 @@
                         color: $color5;
                         padding: 0.5vw;
                         border-radius: 20%;
-                        margin-right: 1vw;
+                        margin: 0.5vw;
                     }
                 }
 
                 .release,
                 .stars {
-                    margin: 1px ;
+                    margin: 1px;
                     font-size: 1.5vw;
                     //display: inline;
                     //border: 1px solid blue;
@@ -97,6 +98,7 @@
         //border: 1px solid green;
         padding: 1vw;
         margin-left: 5vw;
+
         .commentForm {
             //border: 1px solid red;
             margin: 1rem;

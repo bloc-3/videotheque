@@ -2,16 +2,12 @@
 
 .footer {
   text-align: center;
-  vertical-align: middle;
   background-color: $color2;
-  //padding: 1vw;
   margin-top: 1vw;
   height: 10vh;
 
   p {
-    
-    text-align: center;
-    margin: 0;
+    padding-top: 4vh;
     color: $color5;
   }
 }

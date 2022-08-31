@@ -3,6 +3,7 @@
 
 
 .mainAcceuil {
+    //border: 1px red solid;
 
     .searchCard {
         //background-color: red;
@@ -82,7 +83,7 @@
             margin: 5px auto;
             background-color: $color1;
             border-radius: 10px;
-            height: 110vh;
+            height: 100vh;
 
             .card {
                 text-decoration: none;
@@ -107,13 +108,22 @@
             }
 
             .cardBody {
-                height: 45%;
+                //height: 45%;
 
                 //background-color: red;
+                text-align: center;
                 .genre {
                     display: inline;
                     list-style-type: none;
+                    height: 1vw;
+                    width: 5vw;
+                    font-size: 1vw;
+                    background-color: $color2;
                     color: $color5;
+                    padding: 0.5vw;
+                    border-radius: 20%;
+                    margin-right: 0.5vw;
+
 
                 }
             }
