@@ -1,6 +1,6 @@
 const Brand = () => {
   return (
-    <section class="navbarTitle">
+    <section className="navbarTitle">
       <img
         className="logo"
         src="../images/logo.svg"

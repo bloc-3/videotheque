@@ -14,6 +14,7 @@ const Comment = ({ commentId, author, nickname, comment }) => {
     const documentComment = doc(db, "comments", commentId);
 
     updateDoc(documentComment, {
+      user_id: userId,
       comment: newComment,
     });
     window.location.reload();

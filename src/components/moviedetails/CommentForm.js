@@ -25,7 +25,7 @@ const CommentForm = ({ movieId }) => {
 
   return (
     <>
-      <div classname="commentFormContainer">
+      <div className="commentFormContainer">
         {userId === null ? (
           <p className="notConnected">
             Connectez vous pour ajouter un commentaire
@@ -44,7 +44,7 @@ const CommentForm = ({ movieId }) => {
           ></textarea> */}
             <input
               type="text"
-              classname="commentInput"
+              className="commentInput"
               placeholder="Saisissez votre commentaire ici."
               onChange={(e) => {
                 comment = e.target.value;

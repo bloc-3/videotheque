@@ -7,7 +7,7 @@ const Nav = () => {
   const { auth, userId } = useContext(context);
 
   return (
-    <nav class="navbarButtons">
+    <nav className="navbarButtons">
       <ul>
         <NavLink
           className={(nav) =>

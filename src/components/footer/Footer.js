@@ -6,7 +6,7 @@ const Footer = () => {
         sous licence
         <a
           href="http://opensource.org/licenses/mit-license.php"
-          class="text-light"
+          className="text-light"
         >
           {" "}
           MIT
