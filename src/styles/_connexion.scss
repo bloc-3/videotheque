@@ -21,6 +21,8 @@
       font-weight: bold;
 
       div {
+        font-size: calc(5px + 1vw);
+        min-width: 3vw;
         background-color: $color2;
         color: white;
         margin: 0.5em;
@@ -51,7 +53,7 @@
 
       // border: 1px solid $color2;
       // border-color: $color2;
-      height: 20em;
+      height: 20vw;
 
       .signInForm,
       .signUpForm {
