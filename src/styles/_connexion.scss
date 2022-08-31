@@ -1,7 +1,7 @@
 @import './variables';
 
 .SignFormContainer {
-  height: 75vh;
+  height: 72vh;
   padding: auto;
   .SignForm {
     // display: flex;
@@ -50,10 +50,10 @@
       justify-content: center;
       align-items: center;
       border-radius: 0.5em;
-
+      padding: 5vh ;
       // border: 1px solid $color2;
       // border-color: $color2;
-      height: 20vw;
+      
 
       .signInForm,
       .signUpForm {
@@ -63,6 +63,8 @@
         justify-content: flex-start;
         align-items: stretch;
         align-content: stretch;
+        height: 20vh;
+        width: 10vw;
       }
 
       input {
@@ -71,6 +73,8 @@
         border-radius: 0.5em;
         border: none;
         flex-direction: column;
+        height: 3vh;
+        width: 10vw;
       }
 
       input[type="submit"] {
