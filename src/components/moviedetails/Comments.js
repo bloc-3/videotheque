@@ -13,7 +13,6 @@ const Comments = ({ movieId }) => {
   const { db } = useContext(context);
 
   useEffect(() => {
-    console.log('comments list' + comments);
     // récupération des commentaires du film 'movieId'
     const commentsCollection = collection(db, "comments");
     const q = query(commentsCollection, where("movie_id", "==", movieId));
@@ -37,7 +36,6 @@ const Comments = ({ movieId }) => {
               nickname: commentNickname,
               comment: commentMessage,
             };
-            console.log(comments);
             return [...previous, newComment];
           });
         });
