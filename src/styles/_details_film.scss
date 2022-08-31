@@ -7,7 +7,7 @@
     margin-top: -1vw;
     //border: 1px solid $color2;
     width: 100%;
-    height: 75vh;
+    height: 74vh;
 
     .movieDetails {
         display: flex;
@@ -27,7 +27,7 @@
                 //padding-top: 1rem;
                 //margin-bottom: 1rem;
                 height: 10%;
-                font-size: 2vw;
+                font-size: calc((2.5vh + 2.5vw)/2);
                 //border:  1px solid red;
             }
 
@@ -55,7 +55,7 @@
                     .genre {
                         height: 1vw;
                         width: 5vw;
-                        font-size: 1vw;
+                        font-size: calc((1vh + 1vw)/2);
                         background-color: $color3;
                         color: $color5;
                         padding: 0.5vw;
@@ -67,7 +67,7 @@
                 .release,
                 .stars {
                     margin: 1px;
-                    font-size: 1.5vw;
+                    font-size: calc((1.5vh + 1.5vw)/2);
                     //display: inline;
                     //border: 1px solid blue;
                 }
@@ -84,12 +84,12 @@
                 //padding-top: 1vw;
                 text-align: center;
                 vertical-align: auto;
-                font-size: 2vw;
+                font-size: calc((2.5vh + 2.5vw)/2);
             }
 
             .synopsis {
                 padding-top: 0.5vw;
-                font-size: 1.7vw;
+                font-size: calc((2vh + 2vw)/2);
             }
         }
     }
@@ -98,6 +98,13 @@
         //border: 1px solid green;
         padding: 1vw;
         margin-left: 5vw;
+        overflow-y: scroll;
+        overflow-x: unset;
+
+        .notConnected {
+            font-weight: bold;
+            color: $color1;
+        }
 
         .commentForm {
             //border: 1px solid red;
@@ -105,14 +112,29 @@
             width: 15vw;
             display: flex;
 
-            input [type="text"] {
-                width: 100%;
-                height: 3vw;
-                border-radius: 10px 10px 0 0;
-                font-size: 1.5rem;
+            .commentInput {
+                //outline: none;
+                border-radius: 10px 0 0 10px;
+                font-size: calc((2vw + 2vh)/2);
+                color: $color1;
+                //color: red;
                 //border: 5px solid red;
             }
+
+            .newCommentSummit {
+                border-radius: 0 10px 10px 0;
+            }
         }
+
+        ul .comment .comment_data {
+            font-size: calc((2vh + 2vw)/2);
+
+            .nickname {
+                font-weight: bold;
+
+            }
+        }
+
 
     }
 }

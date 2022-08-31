@@ -45,12 +45,12 @@ const CommentForm = ({ movieId }) => {
             <input
               type="text"
               className="commentInput"
-              placeholder="Saisissez votre commentaire ici."
+              placeholder="Ajoutez un commentaire"
               onChange={(e) => {
                 comment = e.target.value;
               }}
             />
-            <input type="submit" value="Poster" />
+            <input type="submit" value="Poster" className="newCommentSummit"/>
           </form>
         )}
       </div>
